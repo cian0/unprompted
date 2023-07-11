@@ -194,6 +194,7 @@ class Shortcode():
 			
 			if debug: mask_image.save(f"zoom_enhance_1_{image_idx}.png")
 			if (image_mask_orig):
+				image_mask_orig = image_pil.copy()
 				self.Unprompted.log("Original image mask detected")
 				prep_orig = image_mask_orig.resize((mask_image.size[0],mask_image.size[1])).convert("L")
 				fg_color = 255
